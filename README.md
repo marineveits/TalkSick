@@ -10,7 +10,9 @@ And so I built a user-friendly and reasonably **smart Slack bot that warns users
 
 ## Data
 
-You can fetch the dataset [here](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data). I used 3 kind of word embeddings:
+I used Toxic Comment Classification dataset from Kaggle to train a model.
+You can fetch the dataset [here](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data). 
+I used Fasttext word embeddings:
 
 * [FastText crawl 300d 2M](https://www.kaggle.com/yekenot/fasttext-crawl-300d-2m)
 
