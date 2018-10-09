@@ -25,7 +25,7 @@ And so I built a user-friendly and reasonably **smart Slack bot that warns users
 
 [Slack](https://slack.com/) is a popular messaging app for teams that allows team members to discuss different topics, organized in channels. Now, Slack's private channels and messaging content is not being monitored, and so does violent or offensive content might be overlooked. 
 
-Wouldn't it be nice to have a smart bot that can listen to differnt channels' conversasions and warn users with a message that is only visible to them, saying that my content might be offensive and kindly asks me to consider rephrasing? Building such a bot is the aim of this project.
+Wouldn't it be nice to have a smart bot that can listen to differnt channels' conversasions and warn users with a message that is only visible to them, saying that their content might be offensive and kindly asks to consider rephrasing? Building Such a bot is the aim of this project.
 
 ---
 
