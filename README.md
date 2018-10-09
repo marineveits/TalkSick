@@ -41,7 +41,7 @@ This competition was powered by Jigsaw and Google. The dataset includes about 30
 ---
 
 
-# <a name="demo">4. Demo: TalkSick in action</a>
+# <a name="demo">3. Demo: TalkSick in action</a>
 
 TalkSick is a Slack bot, she would target offensive content and privately warn users if their content might be offensive to others.
 
@@ -53,6 +53,10 @@ Below is a little illustration of bot's basic functionality, showing me entering
 
 ![](TalkSick.gif)
 
+
+---
+
+
 # <a name="model">4. TalkSick Model</a>
 
 Now that we've seen the bot in action, let's see how does it do all this. 
@@ -60,12 +64,12 @@ Now that we've seen the bot in action, let's see how does it do all this.
 The bot obviously needs to be able to listen to all channel's members' conversations, and send a private warning message to  users if their content might be offensive to others and asks them to reconsider. 
 
 To build and train the model I used a dataset from Kaggle <a name="get_data">.
-I used AWS GPU to get the work done. Used * [FastText crawl 300d 2M](https://www.kaggle.com/yekenot/fasttext-crawl-300d-2m), sklearn, tensorflow and keras to build a Kmax Pooling CNN model. And eventually created a Slack bot to target offensive content. 
+I used AWS GPU to get the work done. Used  [FastText crawl 300d 2M](https://www.kaggle.com/yekenot/fasttext-crawl-300d-2m), sklearn, tensorflow and keras to build a Kmax Pooling CNN model. And eventually created a Slack bot to target offensive content. 
 
 The data is multiclass and multilabel, so I had to be creative with picking the right techniques. For the data preprocessing part I created a custom tokenizer to account for patterns that people often use when they're typing angrily. I also needed to be able to correct typos in order to implement Fasttext word embedding vectors, so I made a spell checker using Levinstein distances.And finally, I used it all to train a Kmax pooling CNN model, using 10 folds and 20 epochs in each.
 
 
-To build this model I basically replicated the Kmax pooling CNN structure from this paper: A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification [here](https://arxiv.org/pdf/1510.03820.pdf).
+To build this model I basically replicated the Kmax pooling CNN structure from this paper: [A Sensitivity Analysis of (and Practitioners’ Guide to) Convolutional Neural Networks for Sentence Classification](https://arxiv.org/pdf/1510.03820.pdf).
 and this a basic schema of its structure
 
 The model resulted in a 0.98 AUC score (on accuracy), and I decided to use F5 score which weighs recall higher than precision (by avoiding false negatives), and resulted in 0.89. This metric is appropriate for the case because the bot would only warn users and not block them so the cost of false negative predictions is higher in this case. 
