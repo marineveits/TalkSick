@@ -9,7 +9,7 @@ And so I built a user-friendly and reasonably **smart Slack bot that warns users
 
 # Contents
 
-[**1. Why a smart policing bot?**](#why_bot)
+[**1. Why a smart TalkSick bot?**](#why_bot)
 
 [**2. Data**](#get_data)
 
@@ -21,7 +21,7 @@ And so I built a user-friendly and reasonably **smart Slack bot that warns users
 
 ---
 
-# <a name="why_bot">1. Why a smart policing bot?</a>
+# <a name="why_bot">1. Why a smart TalkSick bot?</a>
 
 [Slack](https://slack.com/) is a popular messaging app for teams that allows team members to discuss different topics, organized in channels. Now, Slack's private channels and messaging content is not being monitored, and so does violent or offensive content might be overlooked. 
 
